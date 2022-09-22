@@ -6,10 +6,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def uodate
+  def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path
+    redirect_to user_path(@user)
   end
 
   def index
@@ -17,6 +17,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :profile_image, :introducshon)
+    params.require(:user).permit(:name, :profile_image, :introduction)
   end
 end
