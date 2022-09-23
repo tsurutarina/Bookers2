@@ -4,17 +4,17 @@
     <div class="col-md-3">
       <h2>User info</h2>
       <div class="info">
-        <%= image_tag current_user.get_profile_image(100,100) %>
+        <%= image_tag(user.get_profile_image(100,100)) %>
       </div>
       <table>
        <tbody>
           <tr>
             <th>name</th>
-            <th><%= current_user.name %></th>
+            <th><%= user.name %></th>
           </tr>
           <tr>
             <th>introduction</th>
-            <th><%= current_user.introduction %></th>
+            <th><%= user.introduction %></th>
            </tr>
        </tbody>
       </table>
@@ -27,9 +27,9 @@
 
       <h2 class="mt-3">New book</h2>
 
-      <form action="/books" accept-charset="UTF-8" method="post">
+      <!--<form action="/books" accept-charset="UTF-8" method="post">-->
 
-        <%= form_with model: book do |f| %>
+        <%= form_with model: book, url: '/books', method: :post do |f| %>
         <div class="form-group">
           <label for="book_title">Title</label><br>
           <%= f.text_field :title %>

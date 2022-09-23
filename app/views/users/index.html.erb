@@ -1,5 +1,5 @@
 
-<%= render 'books/list', book:@book %>
+<%= render 'books/list', user:current_user, book:@book %>
 
 <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
@@ -17,7 +17,7 @@
           <tr>
             <td><%= image_tag current_user.get_profile_image(80,80) %></td>
             <td><%= @users.name %></td>
-            <td><%= link_to 'show', user_path(@users) %></td>
+            <td><%= link_to 'show', user_path(@user.id) %></td>
           </tr>
           <% end %>
         </tbody>
