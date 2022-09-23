@@ -13,11 +13,11 @@
         </thead>
 
         <tbody>
-          <% @users.each do |book| %>
+          <% @users.each do |user| %>
           <tr>
-            <td><%= image_tag current_user.get_profile_image(80,80) %></td>
-            <td><%= @users.name %></td>
-            <td><%= link_to 'show', user_path(@user.id) %></td>
+            <td><%= image_tag user.get_profile_image(80,80) %></td>
+            <td><%= user.name %></td>
+            <td><%= link_to 'show', user_path(user.id) %></td>
           </tr>
           <% end %>
         </tbody>

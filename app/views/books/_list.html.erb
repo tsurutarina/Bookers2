@@ -29,7 +29,7 @@
 
       <!--<form action="/books" accept-charset="UTF-8" method="post">-->
 
-        <%= form_with model: book, url: '/books', method: :post do |f| %>
+        <%= form_with model: book, method: :post do |f| %>
         <div class="form-group">
           <label for="book_title">Title</label><br>
           <%= f.text_field :title %>
