@@ -74,9 +74,8 @@
       </nav>
     </header>
 
+    <p class="notice"><%= notice %></p>
 
-  <%- flash.each do |message_type, message| content_tag :div, message, class: message_type: "notice" %>
-  <% end-of-input %>
 
     <%= yield %>
     <footer>

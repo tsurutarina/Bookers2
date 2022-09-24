@@ -1,4 +1,6 @@
 
+<div class="container px-5 px-sm-0">
+
 <%= render 'list', user:@user, book:@book %>
 
 <div class="col-md-8 offset-md-1">
@@ -7,12 +9,12 @@
         <tbody>
           <tr>
             <td><%= link_to image_tag(@user.get_profile_image(100,100)), user_path(@user.id)%><br><%= link_to @user.name, user_path(@user.id) %></td>
-            <td><%= link_to @book.title, book_path(@book) %></td>
-            <td><%= @book.body %></td>
-
-
-            <td><%= link_to "Edit", "edit_book_path(@book.id)", class: "btn btn-sm btn-success" %></td>
-            <td><%= link_to "Destroy", "destroy_book_path(book.id)", class: "btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+            <td><%= link_to @books.title, book_path(@books) %></td>
+            <td><%= @books.body %></td>
+            <% if @user == current_user %>
+            <td><%= link_to "Edit", edit_book_path(@books.id), class: "btn btn-sm btn-success" %></td>
+            <td><%= link_to "Destroy", book_path(@books.id), class: "btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+            <% end %>
 
           </tr>
         </tbody>
